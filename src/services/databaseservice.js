@@ -11,7 +11,7 @@ const getPosts = (callback) =>{
   const q = query(collection(db, "Posts"));
 const unsubscribe = onSnapshot(q, (postData) => {
   postData.forEach((doc) => {
-   //   console.log(doc.data())
+      console.log(doc.data())
    callback (doc.data())
   });
 });

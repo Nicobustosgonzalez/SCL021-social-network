@@ -8,58 +8,79 @@ import { CreatePost, getPosts } from "../services/databaseservice.js";
 
 export function feedView() {
   const root = document.createElement("div");
+  root.setAttribute ("id", "containerFeed")
 
-  //IMAGEN USUARIO
-  const profileImg = document.createElement("img");
-  profileImg.setAttribute("class", "profileImg");
-  profileImg.src = "./img/profile-user.png";
-  root.appendChild(profileImg);
+  const divNav = document.createElement("div")
+  divNav.setAttribute("class", "divNav")
+  root.appendChild(divNav)
 
-  //boton de cerrar sesion
-  const btnLogOut = document.createElement("button");
-  btnLogOut.setAttribute("id", "btnLogOut");
-  btnLogOut.setAttribute("type", "submit");
-  btnLogOut.textContent = "Log Out";
-  btnLogOut.addEventListener("click", () => {
-    signOut(auth).then(() => {
-      //COLOCAR ALERTA PARA CERRAR SESION
-      console.log("Haz cerrado sesión");
-    });
-  });
-  root.appendChild(btnLogOut);
-
-  //BUSCADOR DE AMIGOS
-  const Buscador = document.createElement("input");
-  Buscador.setAttribute("class", "Buscador");
-  Buscador.setAttribute("type", "search");
-  Buscador.setAttribute("style", "margin-left:20%");
-  Buscador.setAttribute("placeholder", "Buscar amigos");
-  root.appendChild(Buscador);
-
-  //CAJA DE ESTADO Y LOGO
-  const containFeed = document.createElement("div");
-  containFeed.setAttribute("class", "containFeed");
-  root.appendChild(containFeed);
-
-  //logo de aplicacion
-  const logoFeed = document.createElement("img");
-  logoFeed.src = "./img/logotransparente.png";
-  logoFeed.setAttribute("class", "logoFeed");
-  containFeed.appendChild(logoFeed);
+  //IMGLOGOFEED
+  const logoFeed = document.createElement("img")
+  logoFeed.src ="./img/logotransparente.png"
+  logoFeed.setAttribute("id","logoFeed")
+  divNav.appendChild(logoFeed)
+  //INPUT SEARCH 
+  const inputSearchFeed = document.createElement("input")
+  inputSearchFeed.setAttribute("class","inputSearch")
+  inputSearchFeed.setAttribute("placeholder", "Busca amigos")
+  divNav.appendChild(inputSearchFeed)
+  //BTNS NAV 
+  const btnUserNav = document.createElement("button")
+  btnUserNav.setAttribute("class", "btnNav")
+  btnUserNav.textContent ="user"
+  divNav.appendChild(btnUserNav)
+ //boton de cerrar sesion
+  const btnLogOutNav = document.createElement("button")
+  btnLogOutNav.setAttribute("class", "btnNav")
+  btnLogOutNav.setAttribute("id", "btnLogOut")
+  btnLogOutNav.setAttribute("type", "submit")
+  btnLogOutNav.textContent ="LogOut"
+  btnLogOutNav.addEventListener("click", ()=>{
+    signOut(auth).then(()=> {
+      //alerta cierre sesion
+      alert("Haz cerrado sesion")
+    })
+  })
+  divNav.appendChild(btnLogOutNav)
 
   //caja de publicacion
-  const inputFeedState = document.createElement("input");
-  inputFeedState.setAttribute("class", "inputFeedState");
-  inputFeedState.setAttribute("placeholder", "¿En qué estas pensando?");
-  inputFeedState.setAttribute("type", "text");
-  const btnStateFeed = document.createElement("button");
-  btnStateFeed.textContent = "Publicar";
-  btnStateFeed.addEventListener("click" , () =>{CreatePost("Hola")});
+  const inputFeedState = document.createElement("input")
+  inputFeedState.setAttribute("class","inputFeedState")
+  inputFeedState.setAttribute("id","valueInputFeed")
+  inputFeedState.setAttribute("placeholder","¿Qué estas pensando?")
+  inputFeedState.setAttribute("type","text")
+  root.appendChild (inputFeedState)
+  //btnPublicarFeed 
+  const btnStateFeed = document.createElement("button")
+  btnStateFeed.textContent ="Publicar"
+  btnStateFeed.addEventListener("click", (e)=>{
+    e.preventDefault();
+    const valueInputFeed = document.querySelector("#valueInputFeed").value;
+    console.log(valueInputFeed)
+    //CreatePost("Hola")
+    CreatePost(valueInputFeed)
+    inputClear()
+  });
 
-  containFeed.appendChild(inputFeedState);
+  //limpiar input despues de publicar 
+  const inputClear = () =>{
+    document.querySelector('#valueInputFeed').value = "";
+  }
+  root.appendChild(btnStateFeed)
+  //{CreatePost("Hola")});
 
+
+//DIV PARA PUBLICACIONES
+  const postsIn = document.createElement("div")
+  postsIn.setAttribute ("class", "divVacio") 
+  root.appendChild(postsIn)
   
   root.appendChild(btnStateFeed);
-getPosts((post)=> {console.log("Estoy dentro del feed", post)}) 
+  getPosts((post)=> {postsIn.append(JSON.stringify(post))}) 
   return root;
 }
+
+
+// let div = document.createElement("div")
+// let p = document.createElement("p")
+// div.append("Some text", p)

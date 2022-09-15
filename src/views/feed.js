@@ -4,7 +4,7 @@ import { auth } from "../firebase/startfirebase.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-firestore.js";
 import { db } from "../firebase/startfirebase.js";
 import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-firestore.js";
-import { CreatePost } from "../services/databaseservice.js";
+import { CreatePost, getPosts } from "../services/databaseservice.js";
 
 export function feedView() {
   const root = document.createElement("div");
@@ -58,14 +58,8 @@ export function feedView() {
 
   containFeed.appendChild(inputFeedState);
 
-  //input para publicar imagenes
-  //const btnStateImg = document.createElement("input");
-  //btnStateImg.setAttribute("type", "file");
-  //btnStateImg.setAttribute("class", "fileFeed");
-  //btnStateImg.setAttribute("accept", "image/*");
-  //root.appendChild(btnStateImg);
   
   root.appendChild(btnStateFeed);
-
+getPosts((post)=> {console.log("Estoy dentro del feed", post)}) 
   return root;
 }

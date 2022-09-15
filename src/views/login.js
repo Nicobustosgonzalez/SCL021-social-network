@@ -79,7 +79,7 @@ export function loginView() {
       })
       //capturar error en email o pass y enviar alerta
       .catch((error) => {
-        console.log("nope");
+        console.log("nope", error);
       });
   });
   btnLogin.innerText = "Entrar";

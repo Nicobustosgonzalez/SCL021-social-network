@@ -8,6 +8,13 @@ import { CreatePost, getPosts } from "../services/databaseservice.js";
 
 export function feedView() {
   const root = document.createElement("div");
+  root.setAttribute("class", "feedview")
+
+    //logo de aplicacion
+    const logoFeed = document.createElement("img");
+    logoFeed.src = "./img/logotransparente.png";
+    logoFeed.setAttribute("class", "logoFeed");
+    root.appendChild(logoFeed);
 
   //IMAGEN USUARIO
   const profileImg = document.createElement("img");
@@ -29,23 +36,17 @@ export function feedView() {
   root.appendChild(btnLogOut);
 
   //BUSCADOR DE AMIGOS
-  const Buscador = document.createElement("input");
-  Buscador.setAttribute("class", "Buscador");
-  Buscador.setAttribute("type", "search");
-  Buscador.setAttribute("style", "margin-left:20%");
-  Buscador.setAttribute("placeholder", "Buscar amigos");
-  root.appendChild(Buscador);
+  const buscador = document.createElement("input");
+  buscador.setAttribute("class", "buscador");
+  buscador.setAttribute("type", "search");
+
+  buscador.setAttribute("placeholder", "Buscar amigos");
+  root.appendChild(buscador);
 
   //CAJA DE ESTADO Y LOGO
   const containFeed = document.createElement("div");
   containFeed.setAttribute("class", "containFeed");
   root.appendChild(containFeed);
-
-  //logo de aplicacion
-  const logoFeed = document.createElement("img");
-  logoFeed.src = "./img/logotransparente.png";
-  logoFeed.setAttribute("class", "logoFeed");
-  containFeed.appendChild(logoFeed);
 
   //caja de publicacion
   const inputFeedState = document.createElement("input");
@@ -53,10 +54,16 @@ export function feedView() {
   inputFeedState.setAttribute("placeholder", "¿En qué estas pensando?");
   inputFeedState.setAttribute("type", "text");
   const btnStateFeed = document.createElement("button");
+  btnStateFeed.setAttribute("class", "btnStateFeed")
   btnStateFeed.textContent = "Publicar";
   btnStateFeed.addEventListener("click" , () =>{CreatePost("Hola")});
 
   containFeed.appendChild(inputFeedState);
+
+  //DIV PARA POSTS
+  const postBox = document.createElement("div");
+  postBox.setAttribute("class", "postBox");
+  root.appendChild(postBox);
 
   
   root.appendChild(btnStateFeed);

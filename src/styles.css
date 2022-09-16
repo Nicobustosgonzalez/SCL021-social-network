@@ -130,10 +130,11 @@ button:hover {
 /*VIEW FEED*/
 
 .logoFeed {
-  width: 7%;
-  height: 7%;
-  margin-top: 2%;
-  margin-left: 2%;
+  width: 10%;
+  height: 10%;
+  margin-top: 0%;
+  margin-left: 0%;
+  float: left;
 }
 .i {
   width: 10%;
@@ -144,54 +145,61 @@ button:hover {
   margin-bottom: 0%;
 }
 
-.logoFeed {
-  width: 8%;
-  height: 8%;
-  margin-top: -8%;
-  margin-left: 0%;
-  float: left;
-}
-
 /*INPUT FEED*/
 .inputFeedState {
   padding: 10%;
   border-radius: 10%;
-  margin-top: 10%;
+  margin-top: 7%;
   margin-left: 30%;
+  position: static;
+  margin-left: 2%;
+  margin-right: 50%;
   
 }
 .fileFeed {
   display: inline-block
 }
-
-
+.btnStateFeed{
+  margin-left: 15%;
+  color: #F65A83;
+}
 
 /*IMG PROFILE*/
 .profileImg {
-  float:none;
+  float: left;
   margin: 0%;
-  width: 5%;
-  height: 5%;
+  width: 7%;
+  height: 7%;
   margin-right: 0%;
-  margin-top: 3%;
-  margin-left: 8%;
+  margin-top: 1%;
+  margin-left: 1%;
 }
 
-
-.input search {
-  margin-left: 0%;
-}
 #btnLogOut{
     color: #F65A83;
-    position: float;
-    margin-right: 60%;
+    position: static;
     background: #FFE898;
     font-family: Arial, Helvetica, sans-serif;
-    margin-top: 0%;
-    margin-left: 80%;
-    width: 10%;
-    
+    margin-right: 10%;
+   
 }
-#Buscador{
-  position: static;
+.buscador {
+  position:static;
+  margin-top: 0%;
+  margin-left: 1%;
+
+}
+
+.feedview {
+  width: 100%;
+  height: 100%;
+}
+.postBox {
+  width: 100%;
+  height: 100%;
+}
+
+.containFeed {
+  width: 100%;
+  height: 100%;
 }

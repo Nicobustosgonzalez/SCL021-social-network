@@ -56,7 +56,10 @@ export function feedView() {
   const btnStateFeed = document.createElement("button");
   btnStateFeed.setAttribute("class", "btnStateFeed")
   btnStateFeed.textContent = "Publicar";
-  btnStateFeed.addEventListener("click" , () =>{CreatePost("Hola")});
+  
+  btnStateFeed.addEventListener("click" , () =>{console.log(inputFeedState.value);
+    CreatePost(inputFeedState.value)
+  });
 
   containFeed.appendChild(inputFeedState);
 
@@ -67,6 +70,10 @@ export function feedView() {
 
   
   root.appendChild(btnStateFeed);
-getPosts((post)=> {console.log("Estoy dentro del feed", post)}) 
+getPosts((post)=> {
+  const PostCard = document.createElement("p");
+  PostCard.innerHTML = post.content;
+  root.appendChild(PostCard);
+}) 
   return root;
 }

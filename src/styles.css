@@ -15,11 +15,12 @@ body {
   background-repeat: no-repeat;
   background: rgb(254, 74, 121);
   background: linear-gradient(
-    257deg,
-    rgba(254, 74, 121, 1) 0%,
-    rgba(255, 135, 178, 1) 47%,
-    rgba(255, 248, 188, 1) 100%
-  ) no-repeat center center fixed;
+      257deg,
+      rgba(254, 74, 121, 1) 0%,
+      rgba(255, 135, 178, 1) 47%,
+      rgba(255, 248, 188, 1) 100%
+    )
+    no-repeat center center fixed;
   max-height: 100%;
   max-height: 100%;
 }
@@ -35,20 +36,6 @@ img {
 #logo {
   display: flex;
   justify-content: center;
-}
-
-/*VIEW LOGIN*/
-.imgLogo {
-  display: flex;
-  justify-content: center;
-}
-img {
-  width: 18%;
-  height: 18%;
-}
-#logo {
-  display: block;
-  margin: auto;
 }
 .title {
   display: flex;
@@ -68,7 +55,7 @@ img {
 .input {
   display: block;
   margin: auto;
-  padding: 2%;
+  padding: 0.5%;
   padding-left: 5%;
   padding-right: 5%;
   border-radius: 5px;
@@ -85,7 +72,7 @@ img {
 a {
   display: inline;
   justify-content: center;
-  color: #FFFFFF;
+  color: #ffffff;
   text-decoration: none;
   text-align: center;
   margin-left: 37%;
@@ -93,7 +80,8 @@ a {
 a[target] {
   margin: 0%;
   margin-top: 11%;
-  margin-left: 20%;
+  margin-left: 2%;
+  text-align: center;
 }
 
 button {
@@ -103,39 +91,31 @@ button {
   display: block;
   margin: auto;
   margin-top: 1%;
-  border-radius: 10%;
-  color: #F65A83;
-  background: #FFE898;
+  border-radius: 2%;
+  color: #f65a83;
+  background: #ffe898;
 }
 button:hover {
-  background-color: #FFFFFF;
-  color: #F65A83;
-}
-.btnRecovery {
-  display: block;
-  margin: auto;
-  font-size: 10px;
+  background-color: #ffffff;
+  color: #f65a83;
 }
 .btnRegister {
-  color: #FFFFFF;
+  color: #ffffff;
   background: transparent;
   border: none;
-  font-size:10px;
-  width: 50%;
-  margin: 10px auto;
-  
+  font-size: large;
+  width: 40%;
+  height: 40%;
 }
-#registerButton {
-  width: 50%;
-}
-#btnGoogle, #btnFacebook {
+#btnGoogle,
+#btnFacebook {
   display: block;
   margin: auto;
   padding: 5px;
-  font-size: 10px;
-  background-color: #FFFFFF;
+  font-size: 20px;
+  background-color: #ffffff;
   margin-top: 1%;
-  color: #F65A83;
+  color: #f65a83;
   border-radius: 2%;
   width: 30%;
   height: 100%;
@@ -149,21 +129,14 @@ button:hover {
 }
 
 /*VIEW FEED*/
-.divNav {
-  background-color: #f65a846d;
-  display: flex;
-  justify-content: end;
 
-}
-
-#logoFeed{
+.logoFeed {
   width: 10%;
-
+  height: 10%;
+  margin-top: 0%;
+  margin-left: 0%;
+  float: left;
 }
-.inputSearch {
-  margin: 2px;
-}
-/* fin prueba */
 .i {
   width: 10%;
   height: 10%;
@@ -173,54 +146,58 @@ button:hover {
   margin-bottom: 0%;
 }
 
-.logoFeed {
-  width: 8%;
-  height: 8%;
-  margin-top: -6%;
-  margin-left: 0%;
-  float: left;
-}
-
 /*INPUT FEED*/
 .inputFeedState {
-  display: block;
-  margin: auto;
-  margin-top: 10%;
   padding: 10%;
   border-radius: 10%;
-  
-  
+  margin-top: 7%;
+  margin-left: 30%;
+  position: static;
+  margin-left: 2%;
+  margin-right: 50%;
 }
 .fileFeed {
-  float: left;
-  display: block;
-  margin: auto;
-  margin-top: 5px;
+  display: inline-block;
 }
+.btnStateFeed {
+  margin-left: 15%;
+  color: #f65a83;
+}
+
 /*IMG PROFILE*/
 .profileImg {
   float: left;
   margin: 0%;
-  width: 5%;
-  height: 5%;
+  width: 7%;
+  height: 7%;
   margin-right: 0%;
-  margin-top: 0%;
-  margin-left: 8%;
-
-  
+  margin-top: 1%;
+  margin-left: 1%;
 }
 
-
-.input search {
-  margin-left: 50%;
-}
-#btnLogOut{
-    color: #F65A83;
-    position: float;
-    margin-right: 1%;
-    background: #FFE898;
-    font-family: Arial, Helvetica, sans-serif;
-}
-#Buscador{
+#btnLogOut {
+  color: #f65a83;
   position: static;
+  background: #ffe898;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-right: 10%;
+}
+.buscador {
+  position: static;
+  margin-top: 0%;
+  margin-left: 1%;
+}
+
+.feedview {
+  width: 100%;
+  height: 100%;
+}
+.postBox {
+  width: 100%;
+  height: 100%;
+}
+
+.containFeed {
+  width: 100%;
+  height: 100%;
 }

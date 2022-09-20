@@ -30,7 +30,7 @@ export function feedView() {
   btnLogOut.addEventListener("click", () => {
     signOut(auth).then(() => {
       //COLOCAR ALERTA PARA CERRAR SESION
-      Swal.fire("Haz cerrado sesion")
+      Swal.fire("Has cerrado sesión")
     })
   });
   root.appendChild(btnLogOut);
@@ -53,6 +53,7 @@ export function feedView() {
   inputFeedState.setAttribute("class", "inputFeedState");
   inputFeedState.setAttribute("placeholder", "¿En qué estas pensando?");
   inputFeedState.setAttribute("type", "text");
+  
   const btnStateFeed = document.createElement("button");
   btnStateFeed.setAttribute("class", "btnStateFeed")
   btnStateFeed.textContent = "Publicar";
@@ -71,6 +72,7 @@ export function feedView() {
 //Se imprimen los post
 getPosts((post)=> {
   const PostCard = document.createElement("p");
+  PostCard.setAttribute("class","Postcard");
   PostCard.innerHTML = post.content;
   postBox.appendChild(PostCard);
 }) 

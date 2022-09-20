@@ -56,24 +56,23 @@ export function feedView() {
   const btnStateFeed = document.createElement("button");
   btnStateFeed.setAttribute("class", "btnStateFeed")
   btnStateFeed.textContent = "Publicar";
-  
-  btnStateFeed.addEventListener("click" , () =>{console.log(inputFeedState.value);
-    CreatePost(inputFeedState.value)
-  });
-
+  root.appendChild(btnStateFeed);
   containFeed.appendChild(inputFeedState);
 
-  //DIV PARA POSTS
-  const postBox = document.createElement("div");
-  postBox.setAttribute("class", "postBox");
-  root.appendChild(postBox);
-
+   //DIV PARA POSTS
+   const postBox = document.createElement("div");
+   postBox.setAttribute("class", "postBox");
+   root.appendChild(postBox);
+  btnStateFeed.addEventListener("click" , () =>{console.log(inputFeedState.value);
+    CreatePost(inputFeedState.value)
+    postBox.innerHTML = "";
+  });
   
-  root.appendChild(btnStateFeed);
+//Se imprimen los post
 getPosts((post)=> {
   const PostCard = document.createElement("p");
   PostCard.innerHTML = post.content;
-  root.appendChild(PostCard);
+  postBox.appendChild(PostCard);
 }) 
   return root;
 }

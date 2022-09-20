@@ -79,7 +79,7 @@ export function loginView() {
       })
       //capturar error en email o pass y enviar alerta
       .catch((error) => {
-        console.log("nope", error);
+        Swal.fire("Ups! Ha ocurrido un error, vuelve a intentar")
       });
   });
   btnLogin.innerText = "Entrar";

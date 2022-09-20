@@ -30,8 +30,8 @@ export function feedView() {
   btnLogOut.addEventListener("click", () => {
     signOut(auth).then(() => {
       //COLOCAR ALERTA PARA CERRAR SESION
-      console.log("Haz cerrado sesión");
-    });
+      Swal.fire("Haz cerrado sesion")
+    })
   });
   root.appendChild(btnLogOut);
 

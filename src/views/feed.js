@@ -51,11 +51,13 @@ export function feedView() {
   //caja de publicacion
   const inputFeedState = document.createElement("input");
   inputFeedState.setAttribute("class", "inputFeedState");
+  inputFeedState.setAttribute("maxlength", "200");
   inputFeedState.setAttribute("placeholder", "¿En qué estas pensando?");
   inputFeedState.setAttribute("type", "text");
   
   const btnStateFeed = document.createElement("button");
-  btnStateFeed.setAttribute("class", "btnStateFeed")
+  btnStateFeed.setAttribute("id", "valuein" );
+  btnStateFeed.setAttribute("class", "btnStateFeed");
   btnStateFeed.textContent = "Publicar";
   root.appendChild(btnStateFeed);
   containFeed.appendChild(inputFeedState);
@@ -66,15 +68,21 @@ export function feedView() {
    root.appendChild(postBox);
   btnStateFeed.addEventListener("click" , () =>{console.log(inputFeedState.value);
     CreatePost(inputFeedState.value)
+    inputClear()
     postBox.innerHTML = "";
   });
-  
+  //const inputClear = () => {document.querySelector('#valuein').value = ""};
+
+  //
+
+
 //Se imprimen los post
 getPosts((post)=> {
   const PostCard = document.createElement("p");
   PostCard.setAttribute("class","Postcard");
   PostCard.innerHTML = post.content;
   postBox.appendChild(PostCard);
+  PostCard.appendChild()
 }) 
   return root;
 }

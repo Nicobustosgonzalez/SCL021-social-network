@@ -1,5 +1,5 @@
 import { db } from "../firebase/startfirebase.js";
-import { collection, addDoc, query, onSnapshot } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-firestore.js"
+import { collection, addDoc, query, onSnapshot} from "https://www.gstatic.com/firebasejs/9.9.2/firebase-firestore.js"
 
 
 async function CreatePost (text){
@@ -7,6 +7,14 @@ async function CreatePost (text){
         content : text
       });
 }
+/*
+const likePost = doc(db, "post", "id");
+
+// Set the "capital" field of the city 'DC'
+await updateDoc(likePost, {
+  capital: true
+});
+*/
 const getPosts = (callback) =>{
   const q = query(collection(db, "Posts"));
 const unsubscribe = onSnapshot(q, (postData) => {
@@ -15,5 +23,6 @@ const unsubscribe = onSnapshot(q, (postData) => {
    callback (doc.data())
   });
 });
+
 }
 export { CreatePost,getPosts };

@@ -30,8 +30,8 @@ export function feedView() {
   btnLogOut.addEventListener("click", () => {
     signOut(auth).then(() => {
       //COLOCAR ALERTA PARA CERRAR SESION
-      console.log("Haz cerrado sesión");
-    });
+      Swal.fire("Has cerrado sesión")
+    })
   });
   root.appendChild(btnLogOut);
 
@@ -53,20 +53,28 @@ export function feedView() {
   inputFeedState.setAttribute("class", "inputFeedState");
   inputFeedState.setAttribute("placeholder", "¿En qué estas pensando?");
   inputFeedState.setAttribute("type", "text");
+  
   const btnStateFeed = document.createElement("button");
   btnStateFeed.setAttribute("class", "btnStateFeed")
   btnStateFeed.textContent = "Publicar";
-  btnStateFeed.addEventListener("click" , () =>{CreatePost("Hola")});
-
+  root.appendChild(btnStateFeed);
   containFeed.appendChild(inputFeedState);
 
-  //DIV PARA POSTS
-  const postBox = document.createElement("div");
-  postBox.setAttribute("class", "postBox");
-  root.appendChild(postBox);
-
+   //DIV PARA POSTS
+   const postBox = document.createElement("div");
+   postBox.setAttribute("class", "postBox");
+   root.appendChild(postBox);
+  btnStateFeed.addEventListener("click" , () =>{console.log(inputFeedState.value);
+    CreatePost(inputFeedState.value)
+    postBox.innerHTML = "";
+  });
   
-  root.appendChild(btnStateFeed);
-getPosts((post)=> {console.log("Estoy dentro del feed", post)}) 
+//Se imprimen los post
+getPosts((post)=> {
+  const PostCard = document.createElement("p");
+  PostCard.setAttribute("class","Postcard");
+  PostCard.innerHTML = post.content;
+  postBox.appendChild(PostCard);
+}) 
   return root;
 }

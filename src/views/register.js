@@ -107,6 +107,9 @@ export function registerView() {
         title: "Registro exitoso",
         text: "Se registro exitosamente",
       });
+    })
+    .catch((error) => {
+      Swal.fire("Ups! Ya hay una cuenta asociada a este correo")
     });
   });
   return root;

@@ -96,21 +96,6 @@ getPosts((post)=> {
   postBox.appendChild(likeButton);
   //PostCard.appendChild()
 
-  //LIKE
-  const clickButton = document.querySelector(".likeButton");
-  let count = document.querySelector("#count");
-
-  let clicked = false;
-
-  clickButton.addEventListener("click", () => {
-    if (!clicked) {
-      clicked = true;
-      count.textContent++;
-    } else {
-      clicked = false;
-      count.textContent--;
-    }
-  })
   
 }) 
   return root;

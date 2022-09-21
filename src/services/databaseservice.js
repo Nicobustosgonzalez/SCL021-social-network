@@ -1,10 +1,12 @@
-import { db } from "../firebase/startfirebase.js";
-import { collection, addDoc, query, onSnapshot} from "https://www.gstatic.com/firebasejs/9.9.2/firebase-firestore.js"
+import { db, auth } from "../firebase/startfirebase.js";
+import { collection, addDoc, query, onSnapshot, doc, updateDoc} from "https://www.gstatic.com/firebasejs/9.9.2/firebase-firestore.js"
 
 
 async function CreatePost (text){
     const Post = await addDoc(collection(db, "Posts"), {
-        content : text
+        content : text,
+        likes: [],
+        uid: auth.currentUser.uid,
       });
 }
 /*

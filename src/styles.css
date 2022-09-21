@@ -177,22 +177,22 @@ button:hover {
 }
 
 .containFeed {
+  display: block;
   width: 100%;
   height: 100%;
 }
 /*INPUT FEED*/
 .inputFeedState {
-  column-count:3;
-  column-gap:50px;
+  text-justify: distribute;
+  line-height: normal;
   white-space: initial;
   display: block;
-  width: 50%;
-  height: auto;
+  width: 40%;
+  height: 50%;
   border-radius: 5%;
-  margin-top: 7%;
-  margin-left: 30%;
   position: static;
-  margin-left: 2%;
+  margin-top: 3%;
+  padding-bottom: 20%;
   
 }
 .fileFeed {

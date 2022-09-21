@@ -68,21 +68,50 @@ export function feedView() {
    root.appendChild(postBox);
   btnStateFeed.addEventListener("click" , () =>{console.log(inputFeedState.value);
     CreatePost(inputFeedState.value)
-    inputClear()
     postBox.innerHTML = "";
+    inputClear();
+
+  
   });
-  //const inputClear = () => {document.querySelector('#valuein').value = ""};
 
-  //
-
-
+  const inputClear = () => {
+    document.querySelector('#valuein').value = "";
+  }
 //Se imprimen los post
 getPosts((post)=> {
   const PostCard = document.createElement("p");
   PostCard.setAttribute("class","Postcard");
   PostCard.innerHTML = post.content;
+
+  const likeButton = document.createElement("button");
+  likeButton.setAttribute("class", "likeButton");
+  likeButton.textContent = "LIKE";
+  
+  const spanButton = document.createElement("span");
+  spanButton.setAttribute("id", "count");
+  spanButton.textContent = "";
+  likeButton.appendChild(spanButton);
+
   postBox.appendChild(PostCard);
-  PostCard.appendChild()
+  postBox.appendChild(likeButton);
+  //PostCard.appendChild()
+
+  //LIKE
+  const clickButton = document.querySelector(".likeButton");
+  let count = document.querySelector("#count");
+
+  let clicked = false;
+
+  clickButton.addEventListener("click", () => {
+    if (!clicked) {
+      clicked = true;
+      count.textContent++;
+    } else {
+      clicked = false;
+      count.textContent--;
+    }
+  })
+  
 }) 
   return root;
 }

@@ -21,7 +21,9 @@ Inicialmente se diseñó como una app compleja, con múltiples funcionalidades y
 
 Para tener mejores nociones y distintos puntos de vista del diseño de esta app realizamos un form para recopilar data sobre las preferencias de los tutores a la hora de tener la opción de una red social con las características de iPet.
 
-![](/imgreadme/p1.png) ![](/imgreadme/p2.png) ![](/imgreadme/p3.png) ![](/imgreadme/p4.png) ![](/imgreadme/p5.png) ![](/imgreadme/p6.png) ![](/imgreadme/p7.png) ![](/imgreadme/p8.png) ![](/imgreadme/p9.png) ![](/imgreadme/p11.png) ![](/imgreadme/p1.png) ![](/imgreadme/12.png) ![](/imgreadme/p13.png)
+![](/imgreadme/p1.png) ![](/imgreadme/p2.png) ![](/imgreadme/p3.png) ![](/imgreadme/p4.png) 
+![](/imgreadme/p5.png) 
+![](/imgreadme/p6.png) ![](/imgreadme/p7.png) ![](/imgreadme/p8.png) ![](/imgreadme/p9.png) ![](/imgreadme/p11.png) ![](/imgreadme/p1.png) ![](/imgreadme/12.png) ![](/imgreadme/p13.png)
 
 
 ## 3. Prototipo de baja fidelidad

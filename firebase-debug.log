@@ -1,0 +1,25 @@
+[debug] [2022-09-23T15:24:09.701Z] ----------------------------------------------------------------------
+[debug] [2022-09-23T15:24:09.704Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Raven\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2022-09-23T15:24:09.704Z] CLI Version:   11.9.0
+[debug] [2022-09-23T15:24:09.704Z] Platform:      win32
+[debug] [2022-09-23T15:24:09.704Z] Node Version:  v18.9.0
+[debug] [2022-09-23T15:24:09.879Z] Time:          Fri Sep 23 2022 12:24:09 GMT-0300 (hora de verano de Chile)
+[debug] [2022-09-23T15:24:09.880Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-09-23T15:24:10.266Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-09-23T15:24:10.266Z] > authorizing via signed-in user (constanzabustosgonzalez@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Raven\Desktop\SCL021-social-network
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+

@@ -4,7 +4,7 @@ import { auth } from "../firebase/startfirebase.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-firestore.js";
 import { db } from "../firebase/startfirebase.js";
 import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-firestore.js";
-import { CreatePost, getPosts } from "../services/databaseservice.js";
+import { CreatePost, getPosts, updatePost} from "../services/databaseservice.js";
 
 export function feedView() {
   const root = document.createElement("div");
@@ -91,7 +91,10 @@ getPosts((post)=> {
   spanButton.setAttribute("id", "count");
   spanButton.textContent = "";
   likeButton.appendChild(spanButton);
+  likeButton.addEventListener("click", ()=> {
+  updatePost (PostCard.id)
 
+  });
   postBox.appendChild(PostCard);
   postBox.appendChild(likeButton);
   //PostCard.appendChild()

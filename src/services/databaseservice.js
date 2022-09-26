@@ -8,15 +8,17 @@ async function CreatePost (text){
         likes: [],
         uid: auth.currentUser.uid,
       });
-}
-/*
-const likePost = doc(db, "post", "id");
+    }
+const updatePost = async (postId) => {
+  const likePost = doc(db, "post", "id");
 
-// Set the "capital" field of the city 'DC'
-await updateDoc(likePost, {
-  capital: true
-});
-*/
+  // Set the "capital" field of the city 'DC'
+await   updateDoc(likePost, {
+    content: "texto modificado"
+  })
+}
+
+
 const getPosts = (callback) =>{
   const q = query(collection(db, "Posts"));
 const unsubscribe = onSnapshot(q, (postData) => {
@@ -27,4 +29,4 @@ const unsubscribe = onSnapshot(q, (postData) => {
 });
 
 }
-export { CreatePost,getPosts };
+export { CreatePost,getPosts, updatePost };

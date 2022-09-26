@@ -1,4 +1,5 @@
 {
+  "homepage": "https://nicobustosgonzalez.github.io/SCL021-social-network/",
   "name": "social-network",
   "version": "1.0.0",
   "description": "Social Network @ Laboratoria",
@@ -10,13 +11,8 @@
   ],
   "license": "MIT",
   "scripts": {
-    "htmlhint": "htmlhint dist/*.html ",
-    "eslint": "eslint --ext .js src/ test/",
-    "stylelint": "stylelint --aei src/**/*.css",
-    "pretest": "npm run htmlhint && npm run eslint && npm run stylelint",
-    "test": "jest --coverage",
-    "start": "serve -s src/",
-    "deploy": "gh-pages -d src"
+   "predeploy": "npm run build",
+   "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",

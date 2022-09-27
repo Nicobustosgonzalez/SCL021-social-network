@@ -5,7 +5,7 @@ import { getFirestore } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-
 import { db } from "../firebase/startfirebase.js";
 import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-firestore.js";
 import { CreatePost, getPosts, updatePost} from "../services/databaseservice.js";
-
+//Div para feed
 export function feedView() {
   const root = document.createElement("div");
   root.setAttribute("class", "feedview")
@@ -54,7 +54,7 @@ export function feedView() {
   inputFeedState.setAttribute("maxlength", "200");
   inputFeedState.setAttribute("placeholder", "¿En qué estas pensando?");
   inputFeedState.setAttribute("type", "textarea");
-  
+  //Publicar
   const btnStateFeed = document.createElement("button");
   btnStateFeed.setAttribute("id", "valuein" );
   btnStateFeed.setAttribute("class", "btnStateFeed");
@@ -82,7 +82,7 @@ getPosts((post)=> {
   const PostCard = document.createElement("textarea");
   PostCard.setAttribute("class","Postcard");
   PostCard.innerHTML = post.content;
-
+//Crear botón para likes
   const likeButton = document.createElement("button");
   likeButton.setAttribute("class", "likeButton");
   likeButton.textContent = "+";
@@ -91,8 +91,14 @@ getPosts((post)=> {
   spanButton.setAttribute("id", "count");
   spanButton.textContent = "";
   likeButton.appendChild(spanButton);
+// Funcionalidad click botón like
   likeButton.addEventListener("click", ()=> {
-  updatePost (PostCard.id)
+  const likePost = document.createElement("text");
+  likePost.appendChild(spanButton);
+//actualizar post
+  updatePost (likePost.id)
+
+  
 
   });
   postBox.appendChild(PostCard);

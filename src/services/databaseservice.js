@@ -1,7 +1,7 @@
 import { db, auth } from "../firebase/startfirebase.js";
 import { collection, addDoc, query, onSnapshot, doc, updateDoc} from "https://www.gstatic.com/firebasejs/9.9.2/firebase-firestore.js"
 
-
+//Función asincrona para data post
 async function CreatePost (text){
     const Post = await addDoc(collection(db, "Posts"), {
         content : text,
@@ -9,14 +9,15 @@ async function CreatePost (text){
         uid: auth.currentUser.uid,
       });
     }
+
+  //Recopilar datos posts
 const updatePost = async (postId) => {
   const likePost = doc(db, "post", "id");
 
-  // Set the "capital" field of the city 'DC'
+
 await   updateDoc(likePost, {
     content: "texto modificado"
-  })
-}
+  })}
 
 
 const getPosts = (callback) =>{

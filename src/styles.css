@@ -94,12 +94,14 @@ button:hover {
   color: #f65a83;
 }
 .btnRegister {
+  text-align: center;
   color: #ffffff;
   background: transparent;
   border: none;
-  font-size:small;
-  width: 40%;
-  height: 40%;
+  font-size:medium;
+  width: 50%;
+  height: 50%;
+  margin-left: 25%;
 }
 #btnGoogle,
 #btnFacebook {
